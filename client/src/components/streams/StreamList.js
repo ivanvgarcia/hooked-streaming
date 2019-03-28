@@ -15,9 +15,9 @@ class StreamList extends Component {
         <Item.Extra>
           <Button color="red" floated="right">
             Delete
-            <Icon name="right times" />
+            <Icon name="times" />
           </Button>
-          <Button red floated="right">
+          <Button floated="right">
             Edit
             <Icon name="right chevron" />
           </Button>

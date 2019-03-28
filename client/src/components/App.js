@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import { Container } from "semantic-ui-react";
 
 import Navbar from "./Navbar";
@@ -8,11 +8,12 @@ import StreamEdit from "./streams/StreamEdit";
 import StreamDelete from "./streams/StreamDelete";
 import StreamShow from "./streams/StreamShow";
 import StreamList from "./streams/StreamList";
+import history from "../history";
 
 const App = () => {
   return (
     <div>
-      <BrowserRouter>
+      <Router history={history}>
         <div>
           <Navbar />
           <Container>
@@ -23,7 +24,7 @@ const App = () => {
             <Route path="/streams/:id/show" exact component={StreamShow} />
           </Container>
         </div>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 };
