@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchStreams } from "../../actions";
 import { Link } from "react-router-dom";
-import { Button, Icon, Image, Item, Label } from "semantic-ui-react";
+import { Button, Icon, Item } from "semantic-ui-react";
 
 class StreamList extends Component {
   componentDidMount() {
@@ -17,7 +17,7 @@ class StreamList extends Component {
             Delete
             <Icon name="times" />
           </Button>
-          <Button floated="right">
+          <Button as={Link} to={`/streams/edit/${stream.id}`} floated="right">
             Edit
             <Icon name="right chevron" />
           </Button>
