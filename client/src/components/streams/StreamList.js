@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchStreams } from "../../actions";
 import { Link } from "react-router-dom";
-import { Button, Icon, Item } from "semantic-ui-react";
+import { Button, Icon, Item, Header } from "semantic-ui-react";
 
 class StreamList extends Component {
   componentDidMount() {
@@ -37,7 +37,11 @@ class StreamList extends Component {
         <Item key={stream.id}>
           <Icon bordered inverted color="red" name="video" size="huge" />
           <Item.Content>
-            <Item.Header>{stream.title}</Item.Header>
+            <Item.Header>
+              <Header>
+                <Link to={`/streams/${stream.id}`}>{stream.title}</Link>
+              </Header>
+            </Item.Header>
             <Item.Description>{stream.description}</Item.Description>
             {this.renderAdmin(stream)}
           </Item.Content>
