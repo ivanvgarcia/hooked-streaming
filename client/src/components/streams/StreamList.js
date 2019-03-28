@@ -13,7 +13,12 @@ class StreamList extends Component {
     if (stream.userId === this.props.currentUserId) {
       return (
         <Item.Extra>
-          <Button color="red" floated="right">
+          <Button
+            as={Link}
+            to={`/streams/delete/${stream.id}`}
+            color="red"
+            floated="right"
+          >
             Delete
             <Icon name="times" />
           </Button>
